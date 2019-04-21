@@ -24,6 +24,14 @@ using namespace std;
  函数代码量不是很多，且调用频率比较高时可选用内联函数
  内联函数和宏：
  内联函数和宏都可减少函数调用的内存开销，但是内联函数比宏多了语法检测
+ 
+ ◼ 我们经常使用#ifndef、#define、#endif来防止头文件的内容被重复包含
+ ◼#pragma once可以防止整个文件的内容被重复包含
+ ◼区别
+ #ifndef、#define、#endif受C\C++标准的支持，不受编译器的任何限制
+ 有些编译器不支持#pragma once(较老编译器不支持，如GCC 3.4版本之前)，兼容性不够好
+ #ifndef、#define、#endif可以针对一个文件中的部分代码，而#pragma once只能针对整个文件
+ 
  */
 
 
