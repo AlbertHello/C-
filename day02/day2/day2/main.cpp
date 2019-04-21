@@ -42,6 +42,32 @@ using namespace std;
  ◼ 引用存在的价值之一:比指针更安全、函数返回值可以被赋值
  */
 
+/**
+ 3、const是常量的意思，被其修饰的变量不可更改
+    如果修饰的是类、结构体（的指针），其成员也不可以被更改
+ 
+    以下5个指针分别是什么含义？
+ int age=10;
+ const int *p0=&age;  *p0是常量(age的值不可改变)，p0不是常量（p0可以再指向其他变量）
+ int const *p1=&age;  *p1是常量(age的值不可改变)，p1不是常量（p0可以再指向其他变量）
+ int * const p2=&age;  p2是常量(p2不可以再指向其他变量），*p2不是常量(age的值可改变)
+ const int * const p3=&age; p3是常量(p3不可以再指向其他变量），*p3是常量(age的值不可改变)
+ int const * const p4=&age; p4是常量(p4不可以再指向其他变量），*p4是常量(age的值不可改变)
+ 以上指针的问题可以用以下结论来解决：
+ const 修饰的是其右边的内容
+ 
+ ◼ const引用的特点
+ 可以指向临时数据(常量、表达式、函数返回值等)
+ 可以指向不同类型的数据
+ 作为函数参数时(此规则也适用于const指针)
+ ✓ 可以接受const和非const实参(非const引用，只能接受非const实参)
+ ✓ 可以跟非const引用构成重载
+ 
+ 
+ ◼ 当常引用指向了不同类型的数据时，会产生临时变量，即引用指向的并不是初始化时的那个变量
+ 
+ */
+
 
 
 //内联函数
@@ -90,52 +116,67 @@ int main(int argc, const char * argv[]) {
     
     
     
-    //引用
+//    //引用
+//    int age=10;
+//    //定义了一个引用，相当于age的别名
+//    int &rAge=age;//定义就得初始化，并且指向不能在改变
+//    //int &rAge1=rAge;//利用引用初始化另外一个引用，相当于age变量有多个别名
+//    rAge=40;//间接修改
+//    cout << rAge <<endl;
+//    cout << age <<endl;
+//
+//
+//    Season season;
+//    Season &rSeason=season;//枚举 引用
+//    rSeason=Winter;
+//    cout << season <<endl;
+//
+//
+//    Student stu;
+//    Student &rStu=stu;//结构体 引用
+//    rStu.age=10;
+//    cout << stu.age <<endl;
+//
+//    int a=10;
+//    int b=20;
+//    int *p=&a;//指针p指向a的地址
+//    int *&rP=p; //相当于给指针p 添加了一个别名
+//    rP=&b;//现在又把指针p指向了b的地址
+//    *p=30;//重新给b赋值
+//    cout << a <<endl;
+//    cout << b <<endl;
+//
+//    int array[]={10,20,30};
+//    int (&rArray)[3]=array;//数组 引用
+//    cout << rArray[0] <<endl;
+//    cout << rArray[1] <<endl;
+//    cout << rArray[2] <<endl;
+//
+//
+//    //修改函数返回值
+//    func()=30;//修改函数返回值
+//    cout << number <<endl;
+//
+//    int v1=10;
+//    int v2=30;
+//    swap(v1, v2);
+//    cout << v1 <<endl;
+//    cout << v2 <<endl;
+    
+    
     int age=10;
-    //定义了一个引用，相当于age的别名
-    int &rAge=age;//定义就得初始化，并且指向不能在改变
-    //int &rAge1=rAge;//利用引用初始化另外一个引用，相当于age变量有多个别名
-    rAge=40;//间接修改
-    cout << rAge <<endl;
-    cout << age <<endl;
+    //*p1是常量(age的值不可改变)，p1不是常量（p1可以再指向其他变量）
+    int const *p1=&age;
+    // p2是常量(p2不可以再指向其他变量），*p2不是常量(age的值可改变)
+    int * const p2=&age;
     
+    //常引用
+    //引用的本质就是指针
+//    int & const rAge1=age; //这样写报错。
+    //不能通过引用修改所指向的内容
+    int const &rAge2=age; //const必须写在&符号的左边，才能算是常引用
+//    rAge2=3;//这样写报错
     
-    Season season;
-    Season &rSeason=season;//枚举 引用
-    rSeason=Winter;
-    cout << season <<endl;
-    
-    
-    Student stu;
-    Student &rStu=stu;//结构体 引用
-    rStu.age=10;
-    cout << stu.age <<endl;
-    
-    int a=10;
-    int b=20;
-    int *p=&a;//指针p指向a的地址
-    int *&rP=p; //相当于给指针p 添加了一个别名
-    rP=&b;//现在又把指针p指向了b的地址
-    *p=30;//重新给b赋值
-    cout << a <<endl;
-    cout << b <<endl;
-    
-    int array[]={10,20,30};
-    int (&rArray)[3]=array;//数组 引用
-    cout << rArray[0] <<endl;
-    cout << rArray[1] <<endl;
-    cout << rArray[2] <<endl;
-    
-    
-    //修改函数返回值
-    func()=30;//修改函数返回值
-    cout << number <<endl;
-    
-    int v1=10;
-    int v2=30;
-    swap(v1, v2);
-    cout << v1 <<endl;
-    cout << v2 <<endl;
     
     return 0;
 }
