@@ -48,6 +48,8 @@ using namespace std;
     不存在【引用的引用、指向引用的指针、引用数组】
  
  ◼ 引用存在的价值之一:比指针更安全、函数返回值可以被赋值
+ ◼ 引用的本质就是指针，只是编译器削弱了它的功能，所以引用就是弱化了的指针
+ ◼ 一个引用占用一个指针的大小
  */
 
 /**
@@ -74,6 +76,49 @@ using namespace std;
  
  ◼ 当常引用指向了不同类型的数据时，会产生临时变量，即引用指向的并不是初始化时的那个变量
  
+ */
+
+/**
+ 4、 汇编
+ ◼ 汇编语言的种类
+ 8086汇编(16bit)
+ x86汇编(32bit)
+ x64汇编(64bit)
+ ARM汇编(嵌入式、移动设备)
+ ......
+ ◼ x64汇编根据编译器的不同，有2种书写格式
+ Intel
+ AT&T
+ ◼ 汇编语言不区分大小写
+ 
+ x64汇编要点总结：
+ ◼mov dest, src
+ 将src的内容赋值给dest，类似于dest = src
+ ◼[ 地址值 ]
+ 中括号[ ]里面放的都是内存地址
+ ◼word是2字节，dword是4字节(double word)，qword是8字节(quad word)
+ ◼call 函数地址
+ 调用函数
+ ◼lea dest, [ 地址值 ]
+ 将地址值赋值给dest，类似于dest = 地址值
+ ◼ret
+ 函数返回
+ ◼xor op1, op2
+ 将op1和op2异或的结果赋值给op1，类似于op1 = op1 ^ op2
+ ◼add op1, op2
+ 类似于op1 = op1 + op2
+ ◼sub op1, op2
+ 类似于op1 = op1 - op2
+ inc op
+ 自增，类似于op = op + 1
+ ◼dec op
+ 自减，类似于op = op – 1
+ ◼jmp 内存地址
+ 跳转到某个内存地址去执行代码 j开头的一般都是跳转，大多数是带条件的跳转，一般跟test、cmp等指令配合使用
+ ◼ 权威参考:Intel白皮书
+ https://software.intel.com/en-us/articles/intel-sdm
+ ◼ 一个变量的地址值，是它所有字节地址中的最小的那个地址值
+
  */
 
 
@@ -182,7 +227,7 @@ int main(int argc, const char * argv[]) {
     //引用的本质就是指针
 //    int & const rAge1=age; //这样写报错。
     //不能通过引用修改所指向的内容
-    int const &rAge2=age; //const必须写在&符号的左边，才能算是常引用
+    int const &rAge2=age; //const必须写在&符号的左边，才能算是常引用。表示此时age的值不能被改变了。所以下面的代码会报错
 //    rAge2=3;//这样写报错
     
     
