@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
     
     
     {
-        Albert::Person person;
+        Person person;
         person.setAge(20);
     }
     
