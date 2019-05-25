@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# xcode产生的文件
+*.xcuserstate
