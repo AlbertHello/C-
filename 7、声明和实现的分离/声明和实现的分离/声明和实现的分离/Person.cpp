@@ -9,7 +9,6 @@
 #include "Person.hpp"
 #include <iostream>
 using namespace std;
-namespace Albert {
     //实现 放在.cpp文件中
     //:: 域运算符，指明所属关系
     Person::Person(){
@@ -26,5 +25,4 @@ namespace Albert {
         
         return this->m_age;
     }
-}
 

@@ -10,7 +10,6 @@
 #define Person_hpp
 
 #include <stdio.h>
-namespace Albert {
     //声明 放在头文件
     class Person{
         int m_age;
@@ -20,7 +19,6 @@ namespace Albert {
         void setAge(int age);
         int getAge();
     };
-}
 
 
 #endif /* Person_hpp */
