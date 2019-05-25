@@ -20,7 +20,6 @@
         void setAge(int age);
         int getAge();
     };
-ss
 
 
 #endif /* Person_hpp */
