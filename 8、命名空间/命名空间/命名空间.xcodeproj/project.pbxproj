@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		37F7FB7D2299482A007483D0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37F7FB7C2299482A007483D0 /* main.cpp */; };
-		37F7FB8522995014007483D0 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37F7FB8422995014007483D0 /* Person.cpp */; };
 		37F7FB8822995053007483D0 /* Car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37F7FB8622995053007483D0 /* Car.cpp */; };
+		D1B1B0A7229965220013472E /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1B1B0A5229965220013472E /* Person.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +27,10 @@
 /* Begin PBXFileReference section */
 		37F7FB792299482A007483D0 /* 命名空间 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "命名空间"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F7FB7C2299482A007483D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		37F7FB8322995014007483D0 /* Person.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Person.hpp; path = "../../../7、声明和实现的分离/声明和实现的分离/声明和实现的分离/Person.hpp"; sourceTree = "<group>"; };
-		37F7FB8422995014007483D0 /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Person.cpp; path = "../../../7、声明和实现的分离/声明和实现的分离/声明和实现的分离/Person.cpp"; sourceTree = "<group>"; };
 		37F7FB8622995053007483D0 /* Car.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Car.cpp; sourceTree = "<group>"; };
 		37F7FB8722995053007483D0 /* Car.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Car.hpp; sourceTree = "<group>"; };
+		D1B1B0A5229965220013472E /* Person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		D1B1B0A6229965220013472E /* Person.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Person.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +63,9 @@
 		37F7FB7B2299482A007483D0 /* 命名空间 */ = {
 			isa = PBXGroup;
 			children = (
+				D1B1B0A5229965220013472E /* Person.cpp */,
+				D1B1B0A6229965220013472E /* Person.hpp */,
 				37F7FB7C2299482A007483D0 /* main.cpp */,
-				37F7FB8322995014007483D0 /* Person.hpp */,
-				37F7FB8422995014007483D0 /* Person.cpp */,
 				37F7FB8722995053007483D0 /* Car.hpp */,
 				37F7FB8622995053007483D0 /* Car.cpp */,
 			);
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F7FB8822995053007483D0 /* Car.cpp in Sources */,
-				37F7FB8522995014007483D0 /* Person.cpp in Sources */,
+				D1B1B0A7229965220013472E /* Person.cpp in Sources */,
 				37F7FB7D2299482A007483D0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
