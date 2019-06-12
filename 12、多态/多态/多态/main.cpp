@@ -7,6 +7,29 @@
 //
 
 #include <iostream>
+using namespace std;
+
+class Animal{
+public:
+    void run(){
+        cout << "Animal:run()" <<endl;
+    }
+};
+
+
+class Cat: public Animal{
+public:
+    void run(){
+        cout << "Cat:run()" <<endl;
+    }
+};
+
+class Dog: public Animal{
+public:
+    void run(){
+        cout << "Dog:run()" <<endl;
+    }
+};
 
 int main(int argc, const char * argv[]) {
     // insert code here...
